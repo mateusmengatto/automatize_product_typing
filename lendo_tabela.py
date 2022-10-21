@@ -1,8 +1,8 @@
 import pandas as pd
 
 
-itens_saldo_negativo = pd.read_excel(r'C:\Users\Renan\OneDrive\Área de Trabalho\automatize\falantes_emp2_20-10-2022.xlsx')
-empresa1_saldo = pd.read_excel(r'C:\Users\Renan\OneDrive\Área de Trabalho\automatize\estoq_emp_20-10-22.xlsx')
+itens_saldo_negativo = pd.read_excel(r'arquivos_estoque\falt_2_21-10-22.xlsx', header=0, converters={'codigo_fabricante':str, 'codigo_de_barras':str})
+empresa1_saldo = pd.read_excel(r'arquivos_estoque\estoque1_21-10-22.xlsx', header=0, converters={'codigo_fabricante':str, 'codigo_de_barras':str})
 
 
 

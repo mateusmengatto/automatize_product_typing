@@ -4,20 +4,10 @@ import pandas as pd
 from lendo_tabela import itens_saldo_negativo as tabela
 from lendo_tabela import empresa1_saldo
 
-#abrir ssplus
-# pyautogui.click(x=1478, y=886, clicks=1, button='left')
-# pyautogui.press('winleft')
-# pyautogui.write('ssplus')
-# pyautogui.press('enter')
-# #print(pyautogui.KEYBOARD_KEYS)1,000
-
-
-
-
 
 #FUNÇÃO DIGITAÇÃO
 pyautogui.sleep(3)
-faltantes = []
+faltantes = ''
 for i in range(len(tabela)):
     consulta_saldo = empresa1_saldo.loc[(empresa1_saldo['codigo_de_barras']) == 
                                         (tabela['codigo_de_barras'][i])]
@@ -27,8 +17,9 @@ for i in range(len(tabela)):
     if saldo_necess_emp2 <= saldo_emp_1:
         pyautogui.sleep(1)
         pyautogui.write(str(tabela['codigo_de_barras'][i]))
-        pyautogui.sleep(2)
+        pyautogui.sleep(0.5)
         pyautogui.press('enter')  
+        pyautogui.sleep(1.5)
         pyautogui.write(str((tabela['estoque_disponivel'][i]))[1:])
         pyautogui.sleep(1)
         pyautogui.press('enter')
@@ -40,12 +31,18 @@ for i in range(len(tabela)):
         pyautogui.press('enter')
         pyautogui.sleep(2)
     else:
-        faltantes.append(tabela['codigo_fabricante'][i])
+        faltantes = faltantes + f"{tabela['codigo_fabricante'][i]} --- {tabela['estoque_disponivel'][i]} \n"
 
-print('Os seguintes itens faltam no estoque da empresa 1:')        
-for i in faltantes:
-    print(i) #GERAR LISTA COM QUANTIDADES
+print('Os seguintes itens faltam no estoque da empresa 1:')
+print(faltantes)        
+ #GERAR LISTA COM QUANTIDADES
     
 
 
 
+####abrir ssplus###
+# pyautogui.click(x=1478, y=886, clicks=1, button='left')
+# pyautogui.press('winleft')
+# pyautogui.write('ssplus')
+# pyautogui.press('enter')
+# #print(pyautogui.KEYBOARD_KEYS)1,000
