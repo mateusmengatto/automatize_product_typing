@@ -27,7 +27,8 @@ for i in range(len(tabela)):
         pyautogui.sleep(0.2)
     else:
         faltantes = faltantes + f"{tabela['codigo_fabricante'][i]} ; {tabela['estoque_disponivel'][i]} \n"
-
+        #criar saida de tabela para facilitar 
+        
 print('Os seguintes itens faltam no estoque da empresa 1:')
 print(' ')    
 print('**********')
