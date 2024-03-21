@@ -5,9 +5,7 @@ from lendo_tabela import itens_saldo_negativo as tabela
 from lendo_tabela import empresa1_saldo
 
 
-#FUNÇÃO DIGITAÇÃO
-
-
+#FUNÇÃO DIGITAÇÃO DE ITENS E PROCESSAMENTO DENTRO DO SISTEMA SS PLUS
 
 pyautogui.sleep(3)
 faltantes = 'Código Fabricante; Código de Barras; Estoque negativo; Substituto; \n'
@@ -46,11 +44,5 @@ text_file = open("faltantes.txt", "w")
 text_file.write(faltantes)
 text_file.close()        
 
-# print('Os seguintes itens faltam no estoque da empresa 1:')
-# print(' ')    
-# print('**********')
-# print( 'Item  -------------- Quantidade')
-# print(faltantes)    
-# print('**********')
-#  #GERAR LISTA COM QUANTIDADES
+
     
